@@ -8,7 +8,7 @@ This project simulates how different file allocation methods manage disk space i
 - Measure efficiency in terms of disk utilization and access performance.
 
 ## 🗂️ Project Structure
-'''
+```
 FileSystemSimulation/
 │
 ├── src/
@@ -23,7 +23,7 @@ FileSystemSimulation/
 │   │   └── IndexedAllocation.java        # Uses index block for scattered storage
 │   └── simulation/
 │       └── FileSystemSimulation.java     # Runs and compares different allocation methods
-'''
+```
 
 ## ▶️ How to Run
 1. Compile all Java files:
