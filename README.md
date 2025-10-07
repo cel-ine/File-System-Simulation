@@ -36,6 +36,9 @@ FileSystemSimulation/
 
 
 ## Empty Java File to be modified:
-- ContiguousAllocation.java
-- LinkedAllocation.java 
-- IndexedAllocation.java
+- ContiguousAllocation.java  # empty
+- LinkedAllocation.java  # empty
+- IndexedAllocation.java  # empty
+- index.html # modify if necessary
+- style.css  # empty
+- script.js  # empty
