@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File System Simulation</title>
+</head>
+<body>
+  <h2>File System Simulation</h2>
+  
+  <input type="text" id="fileName" placeholder="File Name">
+  <input type="number" id="fileSize" placeholder="File Size (blocks)">
+  <button onclick="onCreateFile()">Create File</button>
+  <button onclick="onDeleteFile()">Delete File</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    function onCreateFile() {
+      const name = document.getElementById('fileName').value;
+      const size = parseInt(document.getElementById('fileSize').value);
+      javaApp.createFile(name, size); // Calls Java method
+    }
+
+    function onDeleteFile() {
+      const name = document.getElementById('fileName').value;
+      javaApp.deleteFile(name); // Calls Java method
+    }
+  </script>
+</body>
+</html>
