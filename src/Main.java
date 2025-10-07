@@ -11,6 +11,8 @@ import src.filesystem.ContiguousAllocation;
 
 public class Main extends Application {
 
+// Using JavaFX WebView to show basic html
+    
     private FileSystem fileSystem;
 
     @Override
@@ -23,7 +25,7 @@ public class Main extends Application {
         // Load your UI HTML file
         engine.load(getClass().getResource("/ui/index.html").toExternalForm());
 
-        // 👇 ADD THIS HERE
+
         // Connect Java to JavaScript
         engine.getLoadWorker().stateProperty().addListener((obs, oldState, newState) -> {
             if (newState == javafx.concurrent.Worker.State.SUCCEEDED) {
