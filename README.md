@@ -23,6 +23,10 @@ FileSystemSimulation/
 │   │   └── IndexedAllocation.java        # Uses index block for scattered storage
 │   └── simulation/
 │       └── FileSystemSimulation.java     # Runs and compares different allocation methods
+├── ui/
+│   ├── index.html               # Simple interactive UI
+│   ├── style.css                # Basic clean styling
+│   └── script.js                # Handles user interactions
 ```
 
 ## ▶️ How to Run
