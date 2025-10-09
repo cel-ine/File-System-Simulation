@@ -4,8 +4,14 @@ This project simulates how different file allocation methods manage disk space i
 
 ## 🎯 Objectives
 - Implement three file allocation methods: Contiguous, Linked, and Indexed.
-- Simulate file creation, deletion, and disk space management.
+- Simulate file creation, deletion, and disk space management (e.g. free, used, or reserved).
 - Measure efficiency in terms of disk utilization and access performance.
+
+## 💽 UI Flow
+<img width="575" height="280" alt="image" src="https://github.com/user-attachments/assets/f2add8af-c0fd-469d-b526-8482c99e4eff" />
+
+## 🪄 Visualization Differences by Method
+<img width="551" height="123" alt="image" src="https://github.com/user-attachments/assets/83a61bd7-150f-4126-a4ee-1c5566f002b2" />
 
 ## 🗂️ Project Structure
 ```
