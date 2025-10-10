@@ -39,6 +39,8 @@ FileSystemSimulation/
 ⚙️ CONTIGUOUS ALLOCATION FLOW
 
 === FILE SYSTEM SIMULATION ===
+
+
 Select Allocation Method:
 1. Contiguous
 2. Linked
@@ -68,6 +70,7 @@ Contiguous Allocation selected.
 
 
 ---- FILE SYSTEM MENU ----
+
 1. Create File
 2. Delete File
 3. Show File System Status
@@ -110,6 +113,7 @@ Disk:
 
 
 📊 CASE 3 — Show File System Status [after the "report" is deleted, case 3 shows the status]
+
 ---- FILE SYSTEM STATUS ----
 Total Blocks: 128,000
 Used Blocks: 4
@@ -138,6 +142,7 @@ Would you like to try another allocation method? (y/n): y
 
 
 Select Allocation Method:
+
 1. Contiguous
 2. Linked
 3. Indexed
