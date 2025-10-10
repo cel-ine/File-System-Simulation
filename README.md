@@ -44,6 +44,8 @@ Select Allocation Method:
 3. Indexed
 Enter choice (e.g. 1-3): 1
 
+
+
 Select storage device size:
 1. 100 MB
 2. 500 MB
