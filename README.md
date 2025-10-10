@@ -84,12 +84,16 @@ File 'data.txt' created successfully (blocks 3–6).
 Disk:
 [ A ][ A ][ A ][ B ][ B ][ B ][ B ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
 
+
+
 🗑️ CASE 2 — Delete File
 Enter file name to delete: report
 File 'report.txt' deleted successfully.
 
 Disk:
 [ ][ ][ ][ B ][ B ][ B ][ B ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
+
+
 
 📊 CASE 3 — Show File System Status [after the "report" is deleted, case 3 shows the status]
 ---- FILE SYSTEM STATUS ----
@@ -101,6 +105,8 @@ Files:
 1. data.txt → blocks [3–6]
 Disk Visual:
 [ ][ ][ ][ B ][ B ][ B ][ B ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
+
+
 
 🚪 CASE 4 — Exit
 Exiting simulation...
@@ -127,6 +133,7 @@ Storage: 100 MB, Block Size: 4 KB → Total Blocks: 25,600
 Disk initialized.
 
 
+
 🧩 Case 1: Create File
 Enter file name: notes.txt
 Enter file size (KB): 12
@@ -144,6 +151,7 @@ A → notes.txt
 Each block stores data + a pointer to the next block
 
 
+
 🧹 Case 2: Delete File
 ---- File System Menu ----
 1. Create File
@@ -157,6 +165,7 @@ File 'notes.txt' deleted successfully.
 
 [ ][ ][ ][ ][ ][ ][ ][ ][ ] ...
 All blocks freed. 
+
 
 
 📦 Case 3: Show File System Status
@@ -209,6 +218,7 @@ Disk initialized.
 4. Exit
 Enter your choice: 1
 
+
 🧩 Case 1: Create File
 Enter file name: report.txt
 Enter file size (KB): 12
@@ -227,6 +237,8 @@ Legend:
 Block 0 = index (holds pointers)
 Blocks 2,5,8 = data blocks
 
+
+
 🧹 Case 2: Delete File
 ---- File System Menu ----
 1. Create File
@@ -243,6 +255,8 @@ File 'report.txt' deleted successfully.
 
 [ ][ ][ ][ ][ ][ ][ ][ ][ ] ...
 Index and data blocks freed.
+
+
 
 📦 Case 3: Show File System Status
 ---- File System Menu ----
