@@ -34,7 +34,9 @@ FileSystemSimulation/
 ## Terminal User Flow 
 
 1️⃣ Start Simulation
+
 ⚙️ CONTIGUOUS ALLOCATION FLOW
+
 === FILE SYSTEM SIMULATION ===
 Select Allocation Method:
 1. Contiguous
