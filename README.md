@@ -115,6 +115,8 @@ Disk:
 📊 CASE 3 — Show File System Status [after the "report" is deleted, case 3 shows the status]
 
 ---- FILE SYSTEM STATUS ----
+
+
 Total Blocks: 128,000
 Used Blocks: 4
 Free Blocks: 127,996
@@ -129,6 +131,7 @@ Disk Visual:
 
 
 🚪 CASE 4 — Exit
+
 Exiting simulation...
 
 Would you like to try another allocation method? (y/n): y
@@ -154,6 +157,7 @@ Enter storage device size (MB):
 
 Enter block size (KB):
 > 4
+
 
 Storage: 100 MB, Block Size: 4 KB → Total Blocks: 25,600
 Disk initialized.
