@@ -20,6 +20,7 @@ FileSystemSimulation/
 │   │   ├── ContiguousAllocation.java     # Continuous block storage implementation
 │   │   ├── LinkedAllocation.java         # Scattered blocks linked by pointers
 │   │   └── IndexedAllocation.java        # Uses index block for scattered storage
+│   ├── FileSystemTest.java
 └── README.md
 
 ```
