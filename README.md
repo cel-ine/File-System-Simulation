@@ -35,6 +35,7 @@ FileSystemSimulation/
 
 1️⃣ Start Simulation
 
+
 ⚙️ CONTIGUOUS ALLOCATION FLOW
 
 === FILE SYSTEM SIMULATION ===
@@ -64,12 +65,16 @@ Storage: 500 MB, Block Size: 4 KB → Total Blocks: 128,000
 Contiguous Allocation selected.
 
 2️⃣ File System Menu
+
+
 ---- FILE SYSTEM MENU ----
 1. Create File
 2. Delete File
 3. Show File System Status
 4. Exit
 Enter your choice (e.g. 1-4):
+
+
 
 
 💾 CASE 1 — Create File
@@ -91,12 +96,16 @@ Disk:
 
 
 
+
+
 🗑️ CASE 2 — Delete File
 Enter file name to delete: report
 File 'report.txt' deleted successfully.
 
 Disk:
 [ ][ ][ ][ B ][ B ][ B ][ B ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
+
+
 
 
 
@@ -113,6 +122,8 @@ Disk Visual:
 
 
 
+
+
 🚪 CASE 4 — Exit
 Exiting simulation...
 
@@ -120,7 +131,12 @@ Would you like to try another allocation method? (y/n): y
 
 -------------------------------------------------------------------------
 1️⃣ Start Simulation
+
+
 ⚙️ LINKED ALLOCATION FLOW
+
+
+
 Select Allocation Method:
 1. Contiguous
 2. Linked
@@ -136,6 +152,7 @@ Enter block size (KB):
 
 Storage: 100 MB, Block Size: 4 KB → Total Blocks: 25,600
 Disk initialized.
+
 
 
 
@@ -157,7 +174,9 @@ Each block stores data + a pointer to the next block
 
 
 
+
 🧹 Case 2: Delete File
+
 ---- File System Menu ----
 1. Create File
 2. Delete File
@@ -174,6 +193,7 @@ All blocks freed.
 
 
 📦 Case 3: Show File System Status
+
 ---- File System Menu ----
 1. Create File
 2. Delete File
@@ -197,6 +217,8 @@ Would you like to try another allocation method? (y/n): y
 
 -------------------------------------------------------------------------
 1️⃣ Start Simulation
+
+
 ⚙️INDEXED ALLOCATION FLOW
 
 Select Allocation Method:
@@ -245,6 +267,8 @@ Blocks 2,5,8 = data blocks
 
 
 🧹 Case 2: Delete File
+
+
 ---- File System Menu ----
 1. Create File
 2. Delete File
@@ -264,6 +288,8 @@ Index and data blocks freed.
 
 
 📦 Case 3: Show File System Status
+
+
 ---- File System Menu ----
 1. Create File
 2. Delete File
