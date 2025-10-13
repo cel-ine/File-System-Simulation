@@ -4,6 +4,8 @@ package filesystem;
 
 import java.util.*;
 
+// Brief Description: It implements the contiguous allocation (files stored in one continuous block of memory for fast access).
+
 public class ContiguousAllocation implements AllocationMethod {
     private final FileSystem fs;
 
