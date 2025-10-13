@@ -1,62 +1,80 @@
 package filesystem;
 
+package filesystem;
+
 import java.util.*;
 
-/**
- * Implements the Contiguous File Allocation strategy.
- * Finds a sequence of consecutive free blocks to store the file.
- */
 public class ContiguousAllocation implements AllocationMethod {
+    private final FileSystem fs;
 
-    @Override
-    public List<Integer> createFile(String name, int blocksNeeded, boolean[] freeBlocks) {
-        int totalBlocks = freeBlocks.length;
-        int count = 0, start = -1;
-
-        System.out.println("\nSearching for " + blocksNeeded + " contiguous free blocks...");
-
-        for (int i = 0; i < totalBlocks; i++) {
-            if (freeBlocks[i]) {
-                if (start == -1) start = i;
-                count++;
-
-                if (count == blocksNeeded) {
-                    //Found a valid contiguous segment
-                    List<Integer> allocated = new ArrayList<>();
-                    for (int j = start; j < start + blocksNeeded; j++) {
-                        freeBlocks[j] = false;
-                        allocated.add(j);
-                    }
-                    System.out.println("Found space at blocks [" + start + " - " + (start + blocksNeeded - 1) + "]");
-                    return allocated;
-                }
-            } else {
-                //Reset when a used block is encountered
-                count = 0;
-                start = -1;
-            }
-        }
-
-        System.out.println("Insufficient contiguous space.");
-        return null;
+    public ContiguousAllocation(FileSystem fs) {
+        this.fs = fs;
     }
 
     @Override
-    public void deleteFile(String name, boolean[] freeBlocks, List<Integer> blocks) {
-        if (blocks == null || blocks.isEmpty()) {
-            System.out.println("Cannot delete file '" + name + "': no blocks found.");
+    public void createFile(String fileName, int fileSizeKB) {
+        int blocksNeeded = (int) Math.ceil((double) fileSizeKB / fs.getBlockSizeKB());
+        int startIndex = findContiguousSpace(blocksNeeded);
+
+        if (startIndex == -1) {
+            System.out.println("❌ Not enough contiguous space for file: " + fileName);
             return;
         }
 
-        for (int index : blocks) {
-            freeBlocks[index] = true;
+        List<Integer> allocated = new ArrayList<>();
+        for (int i = startIndex; i < startIndex + blocksNeeded; i++) {
+            fs.occupyBlock(i);
+            allocated.add(i);
         }
 
-        System.out.println("Deleted file '" + name + "' and freed blocks [" + blocks.get(0) + " - " + blocks.get(blocks.size() - 1) + "]");
+        fs.addFile(new FileSystem.FileEntry(fileName, allocated));
+        System.out.printf("✅ File '%s' created successfully (blocks %d–%d).\n",
+                fileName, startIndex, startIndex + blocksNeeded - 1);
+    }
+
+    private int findContiguousSpace(int needed) {
+        int freeCount = 0;
+        for (int i = 0; i < fs.getTotalBlocks(); i++) {
+            if (fs.isFree(i)) {
+                freeCount++;
+                if (freeCount == needed) {
+                    return i - needed + 1;
+                }
+            } else {
+                freeCount = 0;
+            }
+        }
+        return -1;
     }
 
     @Override
-    public String getMethodName() {
-        return "Contiguous Allocation";
+    public void deleteFile(String fileName) {
+        FileSystem.FileEntry file = fs.getFiles().get(fileName);
+        if (file == null) {
+            System.out.println("❌ File not found: " + fileName);
+            return;
+        }
+        for (int block : file.getAllocatedBlocks()) {
+            fs.freeBlock(block);
+        }
+        fs.removeFile(fileName);
+        System.out.println("🗑️ File '" + fileName + "' deleted successfully.");
+    }
+
+    @Override
+    public void showStatus() {
+        int used = 0;
+        for (int i = 0; i < fs.getTotalBlocks(); i++) {
+            if (!fs.isFree(i)) used++;
+        }
+        System.out.println("\n---- FILE SYSTEM STATUS ----");
+        System.out.println("Total Blocks: " + fs.getTotalBlocks());
+        System.out.println("Used Blocks: " + used);
+        System.out.println("Free Blocks: " + (fs.getTotalBlocks() - used));
+        System.out.println("Files:");
+        for (FileSystem.FileEntry f : fs.getFiles().values()) {
+            System.out.println("- " + f.getFileName() + " → " + f.getAllocatedBlocks());
+        }
+        fs.showDiskVisual();
     }
 }
