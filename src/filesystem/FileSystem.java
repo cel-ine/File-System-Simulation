@@ -1,6 +1,8 @@
 package filesystem;
 
 import java.util.*;
+// Brief Description: It manages all the disk blocks (used or free), keeps track of each file using FileEntry class which is inside the FileSystem.java. 
+// Additionally, it delegates the allocation and deallocation of the blocks based on the chosen allocation (e.g. Contiguous, Linked or Indexed)
 
 public class FileSystem {
     private final int totalBlocks;
