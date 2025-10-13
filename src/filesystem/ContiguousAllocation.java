@@ -37,7 +37,7 @@ public class ContiguousAllocation implements AllocationMethod {
             }
         }
 
-        System.out.println("❌ Not enough contiguous space available.");
+        System.out.println("Insufficient contiguous space.");
         return null;
     }
 
