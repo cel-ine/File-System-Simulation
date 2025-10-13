@@ -3,6 +3,8 @@ package filesystem;
 
 import java.util.*;
 
+// Brief Description: It implements the indexed allocation (each file has an index block which contains all the data block locations in the memory for direct access to any block).
+
 public class IndexedAllocation implements AllocationMethod {
     private final FileSystem fs;
     private final Map<String, Integer> indexBlocks = new HashMap<>();
