@@ -3,6 +3,8 @@ package filesystem;
 
 import java.util.*;
 
+// Brief Description: It implements the linked allocation (each file is stored in scattered blocks and connected by pointers. Each block can only know the next block connected to it but not the overall linked data block locations)
+
 public class LinkedAllocation implements AllocationMethod {
     private final FileSystem fs;
     private final Map<String, Map<Integer, Integer>> pointers = new HashMap<>();
